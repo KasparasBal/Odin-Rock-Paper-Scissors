@@ -1,74 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Odin | Rock, Paper, Scissors Game</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shizuru&display=swap" rel="stylesheet">
-        <script defer src="script.js"></script>
-        <link rel="stylesheet" href="./styles/main.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin | Rock, Paper, Scissors Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
     <section class="game_start">
-        <h1 class="game_title"><span class="blue_text">Rock,</span> <span class="yellow_text">Paper,</span> <span class="red_text">Scissors!</span></h1>
-        <button class="button play_btn bit-border" type="button" name="play">PLAY</button>
+      <h1 class="game_title">
+        <span class="blue_text">Rock,</span>
+        <span class="yellow_text">Paper,</span>
+        <span class="red_text">Scissors!</span>
+      </h1>
+      <button class="button play_btn bit-border" type="button" name="play">
+        PLAY
+      </button>
     </section>
 
     <section class="game_replay_section hidden">
-        <div class="game_replay_overlay"></div>
-        <div class="game_replay bit-border">
-            <h2 class="thanks">Thanks for playing!</h2>
-            <button class="button replay_btn bit-border" type="button" name="play">PLAY AGAIN?</button>
-        </div>
+      <div class="game_replay_overlay"></div>
+      <div class="game_replay bit-border">
+        <h2 class="thanks">Thanks for playing!</h2>
+        <button class="button replay_btn bit-border" type="button" name="play">
+          PLAY AGAIN?
+        </button>
+      </div>
     </section>
 
     <section class="game_play">
-        <div class="game_dashboard">
-            <h3 class="game_title"><span class="blue_text">Rock,</span> <span class="yellow_text">Paper,</span> <span class="red_text">Scissors!</span></h3>
-            <div class="game_score_container">
-                <div >Player: <span class="game_player_score">0</span></div>
-                <div >Computer: <span class="game_computer_score">0</span></div>
-            </div>
+      <div class="game_dashboard">
+        <h3 class="game_title">
+          <span class="blue_text">Rock,</span>
+          <span class="yellow_text">Paper,</span>
+          <span class="red_text">Scissors!</span>
+        </h3>
+        <div class="game_score_container">
+          <div>Player: <span class="game_player_score">0</span></div>
+          <div>Computer: <span class="game_computer_score">0</span></div>
         </div>
-        <div class="game_play_area">
-            <div class="main_area">
-        <div class="loading hidden">Players picking</div>
-        <div class="game_battle_area hidden">
+      </div>
+      <div class="game_play_area">
+        <div class="main_area">
+          <div class="loading hidden">Players picking</div>
+          <div class="game_battle_area hidden">
             <div class="battle_container">
-                <div ><img class="humanSelection" src="./assets//images/rock_winner.png"></div>
-                <div class="vs"><img src="./assets//images/VS.png"></div>
-                <div ><img class="computerSelection" src="./assets//images/scissors_default.png"></div>
+              <div>
+                <img
+                  class="humanSelection"
+                  alt="human selection sprite"
+                  src="./assets//images/rock_winner.png"
+                />
+              </div>
+              <div class="vs">
+                <img alt="red versus sprite" src="./assets//images/VS.png" />
+              </div>
+              <div>
+                <img
+                  class="computerSelection"
+                  alt="computer selection sprite"
+                  src="./assets//images/scissors_default.png"
+                />
+              </div>
             </div>
             <span class="winner_announcement"></span>
+          </div>
         </div>
-    </div>
         <div class="game_cards">
-            <div id="paper" class="game_card bit-border">
-                <div class="game_card_image_container bit-border">
-                    <img src="./assets/images/paper_default.png" alt="8-bit paper sprite with moustache" height="256px" width="256px">
-                </div>
-                <span>Paper</span>
+          <div id="paper" class="game_card bit-border">
+            <div class="game_card_image_container bit-border">
+              <img
+                src="./assets/images/paper_default.png"
+                alt="8-bit paper sprite with moustache"
+                height="256px"
+                width="256px"
+              />
             </div>
-            <div id="rock" class="game_card bit-border">
-                <div class="game_card_image_container bit-border">
-                <img src="./assets/images/rock_default.png" alt="8-bit rock sprite" height="256px" width="256px">
+            <span>Paper</span>
+          </div>
+          <div id="rock" class="game_card bit-border">
+            <div class="game_card_image_container bit-border">
+              <img
+                src="./assets/images/rock_default.png"
+                alt="8-bit rock sprite"
+                height="256px"
+                width="256px"
+              />
             </div>
-                <span>Rock</span>
+            <span>Rock</span>
+          </div>
+          <div id="scissors" class="game_card bit-border">
+            <div class="game_card_image_container bit-border">
+              <img
+                src="./assets/images/scissors_default.png"
+                alt="8-bit scissors sprite"
+                height="256px"
+                width="256px"
+              />
             </div>
-            <div id="scissors" class="game_card bit-border">
-                <div class="game_card_image_container bit-border">
-                <img src="./assets/images/scissors_default.png" alt="8-bit scissors sprite" height="256px" width="256px">
-                </div>
-                <span>Scissors</span>
-            </div>
+            <span>Scissors</span>
+          </div>
         </div>
-    </div>
+      </div>
 
+      <audio class="music" autoplay>
+        <source src="./assets/music/retro_music.mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <button class="speaker_button bit-border">
+        <img
+          class="speaker_img"
+          alt="speaker sprite"
+          src="./assets/images/playing-speaker.png"
+          width="64"
+          height="64"
+        />
+      </button>
     </section>
-
-
-</body>
+  </body>
 </html>
