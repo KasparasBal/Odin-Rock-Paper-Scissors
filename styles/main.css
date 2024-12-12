@@ -1,0 +1,92 @@
+@font-face{
+    font-family: 'Daydream';
+    src: url('../assets/fonts/Daydream.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Daydream', 'monospace';
+    font-size: 10px;
+}
+
+body{
+    height: 100vh;
+}
+
+/* Section Game Start */
+
+.game_start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game_title{
+    font-size: 3.4rem;
+    text-align: center;
+}
+.blue_text{
+    color: #0D47A1;
+}
+.yellow_text{
+    color: #FFB300;
+}
+.red_text{
+    color: #F50057;
+}
+.play_button {
+    border-style: solid;
+    border-width: .3em 0;
+    box-shadow: -.375em 0 0 -.125em,
+        .375em 0 0 -.125em;
+    margin: 0 .5em;
+    padding: 2em 10em;
+    position: relative;
+    z-index: 1;
+    font-size:1.8rem;
+    font-family: 'Daydream','monospace';
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+.play_button:before {
+        background-color: inherit;
+        border: inherit;
+        border-width: 0 0.3em;
+        bottom: .375em;
+        content: '';
+        left: -.5em;
+        pointer-events: none;
+        position: absolute;
+        top: .375em;
+        right: -.5em;
+        z-index: -1;
+    }
+
+.play_button:after {
+        background-color: inherit;
+        border: inherit;
+        border-width: 0 .3em;
+        bottom: .125em;
+        content: '';
+        left: -.375em;
+        position: absolute;
+        top: .125em;
+        right: -.375em;
+        z-index: -2;
+    }
+.play_button:hover{
+    background-color: #FFB300;
+    scale: 105%;
+}
+.play_button:active{
+    scale: 95%;
+}
+
+/* Section Game Play */

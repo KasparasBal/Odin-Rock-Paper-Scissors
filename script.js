@@ -1,80 +1,68 @@
-let humanScore = 0;
+const choiceButtons = document.querySelector('.choice_buttons')
+const scoreOutput = document.getElementById('score_container')
+const winnerOutput = document.getElementById('winner_container')
+const roundWinnerOutput = document.getElementById('output_container')
+const humanScoreOutput = document.getElementById('humanScore');
+const computerScoreOutput = document.getElementById('computerScore');
+const playBtn = document.querySelector('.play_btn')
+const restartBtn = document.querySelector('.restart_btn')
+
+let playerScore = 0;
 let computerScore = 0;
-let playAgain = false;
-let gameState = false;
+let computerChoice = '';
+let playerChoice = '';
 
 const getComputerChoice = () => {
   const randomNumber =  Math.floor(Math.random()* 3) + 1;
-  let answer = '';
     
     switch(randomNumber){
         case 1: 
-        answer = 'scissors';
+        computerChoice = 'scissors';
         break;
+
         case 2: 
-        answer = 'rock';
+        computerChoice = 'rock';
         break;
+
         case 3:
-        answer = 'paper';
+        computerChoice = 'paper';
         break;
     }
-    
-    return answer;
 }
 
+choiceButtons.addEventListener('click',(e) => {
+    const choice = e.target.closest('button');
+    if(!choice) return;
 
-const getHumanChoice = () => {
-    let answer = prompt('Rock, Paper, Scissors. What will it be?').toLowerCase();
-    if(answer != 'rock' && answer != 'paper' && answer !== 'scissors' ){
-        alert('Wrong input! You must choose Rock, Paper or Scissors');
-        return getHumanChoice();
+    if(choice.classList.contains('rock_btn')) {
+        playerChoice = 'rock';
+        getComputerChoice();
+        handleChoice(playerChoice,computerChoice);
+    } else if (choice.classList.contains('paper_btn')) {
+        playerChoice = 'paper';
+        getComputerChoice();
+        handleChoice(playerChoice,computerChoice);
     } else {
-        return answer;
+        playerChoice = 'scissors';
+        getComputerChoice();
+        handleChoice(playerChoice,computerChoice);
     }
-}
+});
 
-
-
-
-const gameLogic = (humanChoice, computerChoice) => {
-    console.log(`Your Choice: ${humanChoice} Computer Choice: ${computerChoice}`)
-    if (humanChoice === computerChoice) {
-        console.log('Draw! Go again!');
-        checkScores();
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors' ||
-               humanChoice === 'scissors' && computerChoice === 'paper' ||
-               humanChoice === 'paper' && computerChoice === 'rock') {
-        console.log('You win! You get a point!');
-        humanScore++;
-        checkScores();
-        
-    } else {
-        console.log('Computer wins! Computer gets a point!');
-        computerScore++;
-        checkScores();
-
-    }
-
-}
-
-const checkScores = () => {
-    console.log(`Your Score: ${humanScore} Computer Score: ${computerScore}`)
-        if( humanScore == 3 ){
-            console.log('You win this game!')
-           playAgain = confirm('Do you want to play again?')
-        } else if (computerScore == 3) {
-            console.log('Computer wins this game!')
-            playAgain = confirm('Do you want to play again?')
+const handleChoice = (playerChoice,computerChoice) => {
+    if(playerChoice == 'rock' && computerChoice == 'scissors' ||
+        playerChoice == 'scissors' && computerChoice == 'paper' ||
+        playerChoice == 'paper' && computerChoice == 'rock'){
+            playerScore += 1; 
+            humanScoreOutput.textContent = playerScore;
+            console.log("human");
+        } else if (playerChoice == 'rock' && computerChoice == 'rock' ||
+            playerChoice == 'scissors' && computerChoice == 'scissors' ||
+            playerChoice == 'paper' && computerChoice == 'paper'){ 
+                console.log("draw");
         } else {
-            gameLogic(getComputerChoice(), getHumanChoice());
+            computerScore += 1; 
+            computerScoreOutput.textContent = computerScore;
+            console.log('computer')
         }
-
-        if(!gameState && playAgain) {
-            console.clear()
-            humanScore = 0;
-            computerScore = 0;
-            gameLogic(getComputerChoice(), getHumanChoice());
-        }
-    }
-
-  gameLogic(getComputerChoice(), getHumanChoice());
+}
