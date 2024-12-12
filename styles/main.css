@@ -149,6 +149,22 @@ body{
     color: #F50057;
 }
 
+/* Game  */
+
+/* Dashboard */
+
+.game_dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game_score_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Class Hidden */
 .hidden{
     display: none;
