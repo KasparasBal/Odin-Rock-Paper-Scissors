@@ -41,55 +41,103 @@ body{
 .red_text{
     color: #F50057;
 }
-.play_button {
+.bit-border{
     border-style: solid;
     border-width: .3em 0;
     box-shadow: -.375em 0 0 -.125em,
         .375em 0 0 -.125em;
-    margin: 0 .5em;
-    padding: 2em 10em;
     position: relative;
     z-index: 1;
+}
+.bit-border:before{
+    background-color: inherit;
+    border: inherit;
+    border-width: 0 0.3em;
+    bottom: .375em;
+    content: '';
+    left: -.5em;
+    pointer-events: none;
+    position: absolute;
+    top: .375em;
+    right: -.5em;
+    z-index: -1;
+}
+.bit-border:after{
+    background-color: inherit;
+    border: inherit;
+    border-width: 0 .3em;
+    bottom: .125em;
+    content: '';
+    left: -.375em;
+    position: absolute;
+    top: .125em;
+    right: -.375em;
+    z-index: -2;
+}
+ .button {
+    margin: 0 .5em;
+    padding: 2em 10em;
+
     font-size:1.8rem;
     font-family: 'Daydream','monospace';
     transition: 0.1s ease-in-out;
     cursor: pointer;
 }
-.play_button:before {
-        background-color: inherit;
-        border: inherit;
-        border-width: 0 0.3em;
-        bottom: .375em;
-        content: '';
-        left: -.5em;
-        pointer-events: none;
-        position: absolute;
-        top: .375em;
-        right: -.5em;
-        z-index: -1;
-    }
-
-.play_button:after {
-        background-color: inherit;
-        border: inherit;
-        border-width: 0 .3em;
-        bottom: .125em;
-        content: '';
-        left: -.375em;
-        position: absolute;
-        top: .125em;
-        right: -.375em;
-        z-index: -2;
-    }
-.play_button:hover{
-    background-color: #FFB300;
+.button:hover{
     scale: 105%;
 }
-.play_button:active{
+.button:active{
     scale: 95%;
+}
+.play_btn:hover{
+    background-color: #FFB300;
 }
 .hidden{
     display: none;
 }
 
 /* Section Game Play */
+.game_replay_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000048;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game_replay{
+    background-color: #ffffff;
+    padding: 20rem;
+    
+}
+.replay_btn:hover{
+    background-color: #4CAF50;
+}
+.thanks{
+    -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+    color: #4CAF50;
+    font-size: 2.4rem;
+    text-align: center;
+}
+.close_btn{
+    font-family: 'Daydream','monospace';
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2.4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+.close_btn:hover{
+    scale: 105%;
+    color: #F50057;
+}
+.close_btn:active{
+    scale: 95%;
+    color: #F50057;
+}
