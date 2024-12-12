@@ -150,6 +150,10 @@ body{
 }
 
 /* Game  */
+.game_play_area{
+    height: 80vh;
+    width: 100vw;
+}
 
 /* Dashboard */
 
@@ -158,11 +162,59 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 20vh;
 }
 .game_score_container{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5rem;
+    font-size: 2.5rem;
+}
+
+/* Cards */
+
+.game_cards{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18rem;
+}
+.game_card{
+    padding: 4rem;
+    background-color: #FFB300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.game_card:hover{
+    transform: translateY(-5rem);
+}
+.game_card:active{
+    transform: translateY(-3rem);
+    scale: 95%;
+}
+.game_card_image_container{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game_card span{
+    font-size: 3rem;
+}
+.game_card img{
+    height: 25.6rem;
+    width: 25.6rem;
+    padding: 1rem;
 }
 
 /* Class Hidden */
