@@ -1,12 +1,29 @@
 const gameStartSection = document.querySelector('.game_start');
-const playButton = document.querySelector('.play_button');
+const playButton = document.querySelector('.play_btn');
+
+const replayButton = document.querySelector('.replay_btn');
+const replaySection = document.querySelector('.game_replay_section')
+const replayOverlay = document.querySelector('.game_replay_overlay');
+const closeButton = document.querySelector('.close_btn');
+
+const closeOverlay  = [replayButton, closeButton, replayOverlay];
 
 playButton.addEventListener('click', (e) => {
 e.preventDefault();
 
 gameStartSection.classList.add('hidden');
-console.log(gameStartSection.classList);
 })
+
+closeOverlay.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        replaySection.classList.add('hidden');
+        })
+})
+
+
 
 // let playerScore = 0;
 // let computerScore = 0;

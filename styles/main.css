@@ -92,25 +92,32 @@ body{
 .play_btn:hover{
     background-color: #FFB300;
 }
-.hidden{
-    display: none;
-}
 
 /* Section Game Play */
-.game_replay_overlay{
+.game_replay_section{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #00000048;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+}
+.game_replay_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:-1;
+    background-color: #00000048;
+    height: 100vh;
+    width: 100vw;
 }
 .game_replay{
     background-color: #ffffff;
     padding: 20rem;
+    z-index: 2;
     
 }
 .replay_btn:hover{
@@ -140,4 +147,9 @@ body{
 .close_btn:active{
     scale: 95%;
     color: #F50057;
+}
+
+/* Class Hidden */
+.hidden{
+    display: none;
 }
