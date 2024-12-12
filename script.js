@@ -6,12 +6,20 @@ const replaySection = document.querySelector('.game_replay_section')
 const replayOverlay = document.querySelector('.game_replay_overlay');
 const closeButton = document.querySelector('.close_btn');
 
+const loadingEl = document.querySelector('.loading');
+
 const closeOverlay  = [replayButton, closeButton, replayOverlay];
+
+let loading = false;
+let interval = '';
 
 playButton.addEventListener('click', (e) => {
 e.preventDefault();
 
 gameStartSection.classList.add('hidden');
+loading = true;
+loadingLogic();
+loadingEl.classList.remove('hidden');
 })
 
 closeOverlay.forEach(button => {
@@ -22,6 +30,22 @@ closeOverlay.forEach(button => {
         replaySection.classList.add('hidden');
         })
 })
+
+const loadingLogic = () => {
+    if(loading == true){
+        interval = setInterval(() => {
+           if(loadingEl.textContent != 'Players picking...'){
+            loadingEl.textContent += '.';
+           } else {
+            loadingEl.textContent = 'Players picking'
+           }
+      }, 500);  // Change every 500ms
+    
+    } else {
+        clearInterval(interval);
+        loadingEl.textContent = 'Players picking'
+    }
+}
 
 
 
