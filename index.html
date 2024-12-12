@@ -20,9 +20,8 @@
     <section class="game_replay_section hidden">
         <div class="game_replay_overlay"></div>
         <div class="game_replay bit-border">
-            <button class="close_btn">X</button>
             <h2 class="thanks">Thanks for playing!</h2>
-            <button class="button replay_btn bit-border" type="button" name="play">PLAY AGAIN</button>
+            <button class="button replay_btn bit-border" type="button" name="play">PLAY AGAIN?</button>
         </div>
     </section>
 
@@ -30,12 +29,22 @@
         <div class="game_dashboard">
             <h3 class="game_title"><span class="blue_text">Rock,</span> <span class="yellow_text">Paper,</span> <span class="red_text">Scissors!</span></h3>
             <div class="game_score_container">
-                <div class="game_player_score">Player: 5</div>
-                <div class="game_computer_score">Computer: 0</div>
+                <div >Player: <span class="game_player_score">0</span></div>
+                <div >Computer: <span class="game_computer_score">0</span></div>
             </div>
         </div>
-        <div class="game_play_area"></div>
-        <div class="loading hidden">loading</div>
+        <div class="game_play_area">
+            <div class="main_area">
+        <div class="loading hidden">Players picking</div>
+        <div class="game_battle_area hidden">
+            <div class="battle_container">
+                <div ><img class="humanSelection" src="./assets//images/rock_winner.png"></div>
+                <div class="vs"><img src="./assets//images/VS.png"></div>
+                <div ><img class="computerSelection" src="./assets//images/scissors_default.png"></div>
+            </div>
+            <span class="winner_announcement"></span>
+        </div>
+    </div>
         <div class="game_cards">
             <div id="paper" class="game_card bit-border">
                 <div class="game_card_image_container bit-border">
@@ -56,6 +65,7 @@
                 <span>Scissors</span>
             </div>
         </div>
+    </div>
 
     </section>
 

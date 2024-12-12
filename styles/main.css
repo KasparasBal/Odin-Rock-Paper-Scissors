@@ -19,6 +19,8 @@ body{
 /* Section Game Start */
 
 .game_start{
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,6 +29,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    z-index: 999;
 }
 .game_title{
     font-size: 3.4rem;
@@ -151,8 +155,27 @@ body{
 
 /* Game  */
 .game_play_area{
-    height: 80vh;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10rem;
+
+}
+.game_battle_area{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10rem 20rem;
+}
+.battle_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.winner_announcement{
+    font-size: 5rem;
 }
 .loading{
     font-size:2.5rem;
@@ -161,6 +184,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
 
 /* Dashboard */
 
@@ -178,18 +202,23 @@ body{
     gap: 5rem;
     font-size: 2.5rem;
 }
+.main_area{
+    height: 40vh;
+}
 
 /* Cards */
 
 .game_cards{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,-5%);
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 18rem;
+    height: 30vh;
+    transition: 0.3s ease-in-out;
+}
+.game_cards_tucked{
+    transform: translateY(90%);
+    scale: 60%;
+    gap: 10rem;
 }
 .game_card{
     padding: 4rem;
