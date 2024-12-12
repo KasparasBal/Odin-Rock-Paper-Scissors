@@ -88,5 +88,8 @@ body{
 .play_button:active{
     scale: 95%;
 }
+.hidden{
+    display: none;
+}
 
 /* Section Game Play */
