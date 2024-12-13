@@ -28,7 +28,7 @@ let resultTimeout = "";
 let playerScore = 0;
 let computerScore = 0;
 
-let muted = false;
+let muted = true;
 
 playButton.addEventListener("click", (e) => {
   e.preventDefault();
