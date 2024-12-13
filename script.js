@@ -132,6 +132,17 @@ const handleChoice = (playerChoice, computerChoice) => {
       (playerChoice == "scissors" && computerChoice == "scissors") ||
       (playerChoice == "paper" && computerChoice == "paper")
     ) {
+      computerScoreOutput.textContent = computerScore;
+      humanSelection.setAttribute(
+        "src",
+        `./assets/images/${playerChoice}_default.png`
+      );
+      computerSelection.setAttribute(
+        "src",
+        `./assets/images/${computerChoice}_default.png`
+      );
+      winnerAnnouncement.textContent = "DRAW!";
+      checkScore();
     } else {
       computerScore += 1;
 
